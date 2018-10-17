@@ -1,0 +1,46 @@
+[001] import java.io.File;
+[002] import java.io.FileNotFoundException;
+[003] import java.io.PrintWriter;
+[004] import java.util.Scanner;
+[005] 
+[006] //***************************************************************
+[007] // CLASS: Hw1_43
+[008] // AUTHOR: Andrew Seba, aseba, aseba@asu.edu
+[009] //*************************************************************** 
+[010] public class Hw1_43 {
+[011] 	
+[012] 	public void Hw1_34() { }
+[013] 	
+[014] 	public static void main(String[] args)
+[015] 	{
+[016] 		//Using "src/" I was able to find my java file.
+[017] 		String fileName = "src/Hw1_43.java";
+[018] 		
+[019] 		//Create the file object.
+[020] 		File file = new File(fileName);
+[021] 		
+[022] 		Scanner scanner = null;
+[023] 		try 
+[024] 		{
+[025] 			//Read in the file into memory
+[026] 			scanner = new Scanner(file);
+[027] 			PrintWriter out = new PrintWriter(new File(fileName + ".txt"));
+[028] 			int lineNumber = 1;
+[029] 			
+[030] 			while(scanner.hasNextLine()) 
+[031] 			{
+[032] 				String curLine = scanner.nextLine();
+[033] 				out.printf("[%03d] %s\n", lineNumber, curLine);
+[034] 				lineNumber++;
+[035] 			}
+[036] 			scanner.close();
+[037] 			out.close();
+[038] 
+[039] 		} 
+[040] 		catch (FileNotFoundException e) 
+[041] 		{
+[042] 			e.printStackTrace();
+[043] 		}
+[044] 	}
+[045] 	
+[046] }

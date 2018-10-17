@@ -7,22 +7,12 @@ import java.util.ArrayList;
  */
 public class Main {
 	
-	
-	
 	public static void main(String[] args) 
 	{
 		ArrayList<Integer> list = new ArrayList<>();
 		list.add(1);
 		list.add(3);
-		System.out.println(arrayListSum(list));
-	}
-	
-	private static int arrayListSum(ArrayList<Integer> pList) 
-	{
-		int count = 0;
-		for(int i = 0; i < pList.size(); i++) {
-			count++;
-		}
-		return count;
+		Hw1_34 hw = new Hw1_34();
+		System.out.println(hw.arrayListSum(list));
 	}
 }
